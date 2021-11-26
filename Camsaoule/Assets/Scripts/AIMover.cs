@@ -4,44 +4,65 @@ using UnityEngine;
 
 public class AIMover : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [Tooltip("Vitesse de déplacement"), Range(1, 15)]
-    public float linearSpeed = 6;
-    [Tooltip("Vitesse de rotation"), Range(1, 15)]
+
+    [Tooltip("Vitesse de déplacement"), Range(0, 15)]
+    public float lunearSpeed = 6;
+    [Tooltip("Vitesse de rotation"), Range(1, 5)]
     public float angularSpeed = 1;
 
     private Transform player;
-    void Start()
+
+    public Vector3 dirPlayer;
+
+    public float life = 100;
+
+    // Start is called before the first frame update
+    public void Start()
     {
-       GameObject goPlayer = GameObject.FindGameObjectWithTag("Player");
+        GameObject goPlayer = GameObject.FindGameObjectWithTag("Player");
         player = goPlayer.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
     void FixedUpdate()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
-        if(rb != null)
+        if (rb != null)
         {
-            //if(rb.velocity.magnitude < 5)
-            /*if(Input.GetButton("Fire1") && rb.velocity.magnitude < 1)
-            rb.AddForce(transform.forward*30);*/
+            dirPlayer = player.position - transform.position;
+            dirPlayer = dirPlayer.normalized;
 
-            if (rb.angularVelocity.magnitude < angularSpeed)
+            float angle = Vector3.SignedAngle(dirPlayer, transform.forward, transform.up);
+
+            if (angle > 4)
+                rb.AddTorque(transform.up * -5);
+
+            else if (angle < -4)
+                rb.AddTorque(transform.up * 5);
+
+
+            if (Mathf.Abs(angle) < 10 && rb.velocity.magnitude < 3)
             {
-                rb.AddTorque(transform.up * 10);
+                rb.AddForce(transform.forward * 45);
             }
+            Debug.Log(dirPlayer);
 
             Animator anim = GetComponent<Animator>();
-            if(anim != null)
+            if (anim != null)
             {
                 anim.SetFloat("Speed", rb.velocity.magnitude);
             }
         }
+        if (life <= 0)
+            Destroy(gameObject);
+    }
+    private void OnDrawGizmos()
+    {
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawLine(transform.position)
     }
 }
