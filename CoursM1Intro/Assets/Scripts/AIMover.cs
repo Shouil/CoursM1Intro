@@ -45,7 +45,7 @@ public class AIMover : MonoBehaviour
                 rb.AddTorque(transform.up * 5);
 
 
-            if (Mathf.Abs(angle) < 10 && rb.velocity.magnitude < 3)
+            if (Mathf.Abs(angle) < 10 && rb.velocity.magnitude < 7)
             {
                 rb.AddForce(transform.forward * 45);
             }

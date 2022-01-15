@@ -71,8 +71,8 @@ public class PlayerMove : MonoBehaviour
         float hori = Input.GetAxis("Horizontal");
 
         Vector3 horizontalVelocity = Vector3.zero;
-        horizontalVelocity += vert * transform.forward * 5;
-        horizontalVelocity += hori * transform.right * 5;
+        horizontalVelocity += vert * transform.forward * 12;
+        horizontalVelocity += hori * transform.right * 12;
         rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
 
         // Tomber plus vite

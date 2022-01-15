@@ -4876,7 +4876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lunearSpeed: 6
-  angularSpeed: 1
+  angularSpeed: 2
   dirPlayer: {x: 0, y: 0, z: 0}
   life: 80
 --- !u!136 &1168641342
@@ -4907,7 +4907,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 20
+  m_Constraints: 4
   m_CollisionDetection: 3
 --- !u!1 &1173429525
 GameObject:
@@ -8970,7 +8970,7 @@ PrefabInstance:
       objectReference: {fileID: 4097784453683318685}
     - target: {fileID: 1116194345733315113, guid: d96057e93033b284cbc37ddc28d84d86, type: 3}
       propertyPath: timeNextSpawn
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1116194345733315113, guid: d96057e93033b284cbc37ddc28d84d86, type: 3}
       propertyPath: timeNextVague
@@ -9087,6 +9087,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
+      propertyPath: m_Time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
       propertyPath: m_Autodestruct
       value: 1
       objectReference: {fileID: 0}
@@ -9095,16 +9103,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2de39c43f7eeff4f82ee58e771055b8, type: 2}
+    - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
       propertyPath: m_Parameters.colorGradient.ctime0
-      value: 48380
+      value: 65150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 0.46153846
+      value: 0.43147865
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.09979248
       objectReference: {fileID: 0}
     - target: {fileID: 1223430167292622206, guid: b46273ba366118d40851720a0ab7602a, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0.2290749
+      value: 0.029077947
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46273ba366118d40851720a0ab7602a, type: 3}
@@ -9197,7 +9221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 941955787642664335, guid: ad775030f3715a346bbbf7ac18199a1a, type: 3}
       propertyPath: lunearSpeed
-      value: 4
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 941955787642664335, guid: ad775030f3715a346bbbf7ac18199a1a, type: 3}
+      propertyPath: angularSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3876542595044629118, guid: ad775030f3715a346bbbf7ac18199a1a, type: 3}
       propertyPath: m_LocalPosition.x
