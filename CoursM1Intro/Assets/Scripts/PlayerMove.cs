@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
     public Transform playerCam;
     public Transform objectToThrow;
     public bool isGrounded;
+    public float maxHealth = 100; 
+    public float currentHealth;
+    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +20,10 @@ public class PlayerMove : MonoBehaviour
         }
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        //Health
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Update()
@@ -29,7 +37,7 @@ public class PlayerMove : MonoBehaviour
         Quaternion q = Quaternion.AngleAxis(rot, playerCam.right);
         playerCam.rotation = q * playerCam.rotation;
 
-        // Est ce qu'on a la tete à l'envers ?
+        // Est ce qu'on a la tete a l'envers ?
         Vector3 forwardCam = playerCam.forward;
         Vector3 forwardPlayer = transform.forward;
         float regardeDevant = Vector3.Dot(forwardCam, forwardPlayer);
@@ -43,11 +51,12 @@ public class PlayerMove : MonoBehaviour
         q = Quaternion.AngleAxis(rot, transform.up);
         transform.rotation = q * transform.rotation;
 
+        //Sphère d'attaque
         if(Input.GetButtonDown("Fire1"))
         {
             Transform obj = GameObject.Instantiate<Transform>(objectToThrow);
             obj.position = playerCam.position + playerCam.forward;
-            obj.GetComponent<Rigidbody>().AddForce(playerCam.forward * 10, ForceMode.Impulse);
+            obj.GetComponent<Rigidbody>().AddForce(playerCam.forward * 100, ForceMode.Impulse);
         }
 
     }
@@ -101,5 +110,19 @@ public class PlayerMove : MonoBehaviour
         //rb.AddForce(transform.up*1.5f, ForceMode.Impulse); 
         //isGrounded = false;
 
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.tag == "Player")
+        {
+            TakeDamage(6);
+        }
+    }
+
+    void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        healthBar = new HealthBar();
+        healthBar.SetHealth(currentHealth);
     }
 }

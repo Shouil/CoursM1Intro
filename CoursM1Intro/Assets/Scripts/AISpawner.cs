@@ -20,10 +20,10 @@ public class AISpawner : MonoBehaviour
     private int nbSpawned = 0;
 
     private float timeSpawn = 0;
-    [Range(1, 3)]
+    [Range(1, 10)]
     public float timeNextSpawn = 1;
     private float timeVague = 0;
-    [Range(30, 50)]
+    [Range(1, 50)]
     public float timeNextVague = 1;
 
     void Start()
