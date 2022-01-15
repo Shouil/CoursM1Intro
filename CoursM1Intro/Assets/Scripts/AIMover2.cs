@@ -17,7 +17,7 @@ public class AIMover2 : MonoBehaviour
         myNavmesh = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Time.time > nextCheck)
         {

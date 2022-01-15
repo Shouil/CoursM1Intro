@@ -117,6 +117,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -141,6 +142,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &3598042885058460906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ BoxCollider:
   m_GameObject: {fileID: 2525614982169708958}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.6393646, y: 0.726787, z: 0.3890834}
   m_Center: {x: -0.012383714, y: 0.36298388, z: 0.12488061}
@@ -210,6 +212,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -234,6 +237,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &7745140562035592029
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -243,7 +247,7 @@ BoxCollider:
   m_GameObject: {fileID: 4365006478505614567}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.6393646, y: 0.7264306, z: 0.39416677}
   m_Center: {x: -0.012383714, y: 0.36316207, z: 0.12233892}
@@ -303,6 +307,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -327,6 +332,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &5378520226971839613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -336,7 +342,7 @@ BoxCollider:
   m_GameObject: {fileID: 6340100334729834323}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.64005667, y: 0.7256908, z: 0.39453912}
   m_Center: {x: -0.012357384, y: 0.36284557, z: 0.122525096}
